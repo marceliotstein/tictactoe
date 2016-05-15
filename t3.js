@@ -20,6 +20,7 @@ function newGame() {
   boxes = document.getElementsByClassName('t3box');
   for (i=0; i<boxes.length; i++) {
     boxes[i].innerHTML = "&nbsp;";
+    boxes[i].className = boxes[i].className.replace(' t3winner','');
   }
   numFilled = 0;
   activePlayer = "X";
@@ -33,6 +34,12 @@ function findWinner() {
       if ((b0==activeGrid[winningCombos[i][1]]) &&
           (b0==activeGrid[winningCombos[i][2]])) {
         winner = b0;
+        b1 = activeGrid[winningCombos[i][1]];
+        b2 = activeGrid[winningCombos[i][2]];
+        boxes = document.getElementsByClassName('t3box');
+        boxes[winningCombos[i][0]].className += ' t3winner';
+        boxes[winningCombos[i][1]].className += ' t3winner';
+        boxes[winningCombos[i][2]].className += ' t3winner';
         alert("The winner is " + winner);
         newGame();
       }

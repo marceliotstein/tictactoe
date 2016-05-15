@@ -7,9 +7,21 @@ body {
 }
 
 .t3grid {
-  width: 50%;
+  /*width: 50%;*/
   border-spacing: 0px;
   border-width: 0px;
+}
+
+@media (orientation: portrait) {
+  .t3grid {
+    height: 50%;
+  }
+}
+
+@media (orientation: landscape) {
+  .t3grid {
+    width: 50%;
+  }
 }
 
 .t3row { 
@@ -82,3 +94,6 @@ td .t3box {
   text-align: center;
 }
 
+.t3winner {
+  background-color: blue;
+}
