@@ -28,17 +28,16 @@ for (i=0; i<boxes.length; i++) {
       b = 8;
     } 
     if (activegrid[b]==null) {
-      alert("valid move");
       activegrid[b] = activeplayer; 
+      this.innerHTML = activeplayer;
       if (activeplayer=="X") {
         activeplayer = "O";
       } else if (activeplayer=="O") {
         activeplayer = "X";
       }
     } else {
-      alert("invalid move");
+      alert("This space is occupied");
     }
-    //alert(this.className);
   }
 }
 

@@ -2,6 +2,10 @@
  * t3.css
  */
 
+body {
+  font-family: helvetica, sans-serif;
+}
+
 .t3grid {
   width: 50%;
   border-spacing: 0px;
@@ -15,6 +19,8 @@
 
 .t3cell {
   border-width: 0px;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
 }
  
 .t3left {
@@ -54,8 +60,9 @@ div {
 }
 
 td {
-  width:33.33;
+  width:33.33%;
   position:relative;
+  valign: middle;
 }
 
 td:after{
@@ -70,5 +77,8 @@ td .t3box {
   bottom:0;
   left:0;
   right:0;
+  font-family: helvetica, sans-serif;
+  font-size: 18vw;
+  text-align: center;
 }
 
