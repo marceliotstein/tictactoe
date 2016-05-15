@@ -7,12 +7,15 @@ body {
 }
 
 .t3grid {
-  width: 50%;
+  padding: 10px;
   border-spacing: 0px;
   border-width: 0px;
 }
 
 @media (orientation: portrait) {
+  .t3grid {
+    width: 100%;
+  }
   #control {
     width: 100%;
   }
@@ -23,6 +26,10 @@ body {
 }
 
 @media (orientation: landscape) {
+  .t3grid {
+    height: 100%;
+    width: 100%;
+  }
   #control {
     width: 50%;
     float: left;
