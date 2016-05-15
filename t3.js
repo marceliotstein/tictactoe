@@ -2,6 +2,8 @@
  * t3.js
  */
 
+/* global variables */
+
 var activeGrid = [null,null,null,null,null,null,null,null,null];
 var activePlayer = "X";
 var numFilled = 0; 
@@ -15,6 +17,8 @@ var winningCombos = [[0,1,2],
                      [0,4,8],
                      [2,4,6]];
 
+/* reset function */
+
 function newGame() {
   activeGrid = [null,null,null,null,null,null,null,null,null];
   boxes = document.getElementsByClassName('t3box');
@@ -24,6 +28,8 @@ function newGame() {
   }
   numFilled = 0;
   activePlayer = "X";
+  result = document.getElementById('result');
+  result.innerHTML = "";
 }
 
 function findWinner() {
@@ -40,8 +46,8 @@ function findWinner() {
         boxes[winningCombos[i][0]].className += ' t3winner';
         boxes[winningCombos[i][1]].className += ' t3winner';
         boxes[winningCombos[i][2]].className += ' t3winner';
-        alert("The winner is " + winner);
-        newGame();
+        result = document.getElementById('result');
+        result.innerHTML = "The winner is " + winner;
       }
     }
   }
