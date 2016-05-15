@@ -7,20 +7,29 @@ body {
 }
 
 .t3grid {
-  /*width: 50%;*/
+  width: 50%;
   border-spacing: 0px;
   border-width: 0px;
 }
 
 @media (orientation: portrait) {
-  .t3grid {
-    height: 50%;
+  #control {
+    width: 100%;
+  }
+  #game {
+    width: 100%;
+    float: clear both;
   }
 }
 
 @media (orientation: landscape) {
-  .t3grid {
+  #control {
     width: 50%;
+    float: left;
+  }
+  #game {
+    width: 50%;
+    float: right;
   }
 }
 
