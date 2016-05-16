@@ -21,11 +21,22 @@ td .t3box {
   padding: 10px;
   border-spacing: 0px;
   border-width: 0px;
+  margin: 0 auto;
+}
+
+.t3panel {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.t3title {
+  font-size: 3em;
 }
 
 @media (orientation: portrait) {
   td .t3box {
     font-size: 28vw;
+    vertical-align: middle;
   }
   .t3grid {
     width: 100%;
@@ -42,6 +53,7 @@ td .t3box {
 @media (orientation: landscape) {
   td .t3box {
     font-size: 13vw;
+    vertical-align: middle;
   }
   .t3grid {
     height: 75%;

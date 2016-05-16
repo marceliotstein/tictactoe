@@ -5,12 +5,14 @@
   </head>
   <body>
     <div id="control">
-      <h1>Tic Tac Toe</h1>
-      <div>
-        <input id="t3reset" type="button" onclick="newGame()" value="New Game" />
-        <input id="t3about" type="button" onclick="about()" value="About This Exercise" />
+      <div class="t3panel">
+        <div class="t3title">Tic Tac Toe</div>
+        <div>
+          <input id="t3reset" type="button" onclick="newGame()" value="New Game" />
+          <input id="t3about" type="button" onclick="about()" value="About This Exercise" />
+        </div>
+        <div id="result"></div>
       </div>
-      <div id="result"></div>
     </div>
     <div id="game">
       <table class="t3grid">
