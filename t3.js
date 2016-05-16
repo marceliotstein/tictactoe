@@ -2,7 +2,7 @@
  * t3.js
  */
 
-/* define game board */
+/* game board */
 
 var playerOne = "X";
 var playerTwo = "O";
@@ -30,7 +30,7 @@ var about = document.getElementById('t3about');
 var board = document.getElementById('t3board');
 var result = document.getElementById('result');
 var aboutButton = document.getElementById('aboutButton');
-var boxes = document.getElementsByClassName('t3box');
+var boxes = document.getElementsByClassName('t3cell');
 
 /* toggle "about" text which shares space with game board */
 
@@ -111,15 +111,21 @@ for (i=0; i<boxes.length; i++) {
     } else if (this.id=="box9") {
       b = 8;
     } 
+
+    // make a move by placing character, marking grid and flipping active player
+
     if (activeGrid[b]==null) {
-      activeGrid[b] = activePlayer; 
       this.innerHTML = activePlayer;
+      activeGrid[b] = activePlayer; 
       if (activePlayer==playerOne) {
         activePlayer = playerTwo;
       } else if (activePlayer==playerTwo) {
         activePlayer = playerOne;
       }
       numFilled++;
+
+      // determine if the game has ended
+
       reviewMove();
     }
   }
