@@ -29,8 +29,28 @@ td .t3box {
   text-align: center;
 }
 
+button {
+  background-color: orange;
+  border: 0;
+}
+
 .t3title {
+  padding: 5px;
   font-size: 3em;
+}
+
+.t3buttons {
+  padding: 5px;
+}
+
+.t3result {
+  padding: 5px;
+  font-size: 3em;
+  color: orange;
+}
+
+.t3winner {
+  background-color: orange;
 }
 
 @media (orientation: portrait) {
@@ -128,6 +148,3 @@ td:after{
   margin-top:100%;
 }
 
-.t3winner {
-  background-color: orange;
-}

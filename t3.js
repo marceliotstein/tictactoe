@@ -55,7 +55,7 @@ function findWinner() {
         boxes[winningCombos[i][1]].className += ' t3winner';
         boxes[winningCombos[i][2]].className += ' t3winner';
         result = document.getElementById('result');
-        result.innerHTML = "The winner is " + winner;
+        result.innerHTML = winner + " Wins!";
       }
     }
   }
