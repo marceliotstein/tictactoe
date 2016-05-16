@@ -81,11 +81,11 @@ td:after{
 
 @media (orientation: portrait) {
   td .t3box {
-    font-size: 30vw;
+    font-size: 26vw;
     vertical-align: middle;
   }
   .t3grid {
-    width: 100%;
+    width: 85%;
   }
   #control {
     width: 100%;

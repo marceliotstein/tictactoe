@@ -18,12 +18,14 @@
     </div>
     <div id="game">
       <div id="t3about">
-        <p>The code for this exercise is at <a target="_blank" href="https://github.com/marceliotstein/tictactoe">https://github.com/marceliotstein/tictactoe</a>.</p>
-        <p>The biggest challenge was to construct a layout for a tic tac toe grid and control panel that would make good use of available space on a wide variety of screen sizes. I used a combination of absolute and relative position, along with viewport-based sizing. The result may skew at abnormally wide or narrow screens, but should work correctly on most screens I had a chance to test.</p>
-        <p>I spent several hours on this, and focused most of my effort on selecting the right layout approach, rather than adding a lot of sophistication or modularity into the code. The javascript implementation is simple and straightforward, with variable names that should help to explain what is going on.</p>
-        <p>Another interesting decision I had to make was whether to implement the game board data structure with a multi-dimensional array. If there were any chance that this code would have to be adapted to a 4x4 or larger game board, I would have chosen a 2-dimensional array. With a fixed grid of 3x3 (which is a basic principle of Tic Tac Toe) it was more straightforward to use a 1-dimensional array of 9 elements to represent the 3x3 grid.</p>
-        <div class="t3buttons">
-          <input id="dismiss" type="button" onclick="toggleAbout()" value="Dismiss" />
+        <p>The code for this exercise is at:</p>
+        <p><a target="_blank" href="https://github.com/marceliotstein/tictactoe">https://github.com/marceliotstein/tictactoe</a>.</p>
+        <p>This was an easy coding task but a difficult design/layout task. The toughest challenge was to create a game board and control panel that makes good use of all available space on a wide variety of screen sizes. I used a combination of absolute and relative positioning, as well as a combination of viewport-based and media-query-based responsive technique. The result may skew at abnormally wide or narrow screens, but works correctly on the various device sizes I was able to test with.</p>
+        <p>Another interesting decision I had to make was whether to implement the game board data structure with a single or multi-dimensional array. If there were any chance that this code would have to be adapted to a 4x4 or greater grid, I would have chosen a 2-dimensional array for extensibility. However, the 3x3 grid is a basic principle of Tic Tac Toe, so I used a 1-dimensional array for maximum simplicity and efficiency.</p>
+        <div class="t3panel">
+          <div class="t3buttons">
+            <input id="dismiss" type="button" onclick="toggleAbout()" value="Dismiss" />
+          </div>
         </div>
       </div>
       <div id="t3board">
