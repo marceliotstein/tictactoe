@@ -20,7 +20,7 @@
       <div id="t3about">
         <p>The code for this exercise is at:</p>
         <p><a target="_blank" href="https://github.com/marceliotstein/tictactoe">https://github.com/marceliotstein/tictactoe</a>.</p>
-        <p>This was an easy coding task but a difficult design/layout task. The toughest challenge was to create a game board and control panel that makes good use of all available space on a wide variety of screen sizes. I used a combination of absolute and relative positioning, as well as a combination of viewport-based and media-query-based responsive technique. The result may skew at abnormally wide or narrow screens, but works correctly on the various device sizes I was able to test with.</p>
+        <p>This was an easy coding task but a difficult design/layout task. The toughest challenge was to create a game board and control panel that makes good use of all available space on a wide variety of screen sizes. I tried a variety of methods to get a consistent and attractive grid size, and ended up choosing a table-based layout (for best CSS alignment options), a monospace font and a combination of viewport sizing and media queries to cover all screen sizes. I tested with a mobile test suite and it seems to work in all cases.</p>
         <p>Another interesting decision I had to make was whether to implement the game board data structure with a single or multi-dimensional array. If there were any chance that this code would have to be adapted to a 4x4 or greater grid, I would have chosen a 2-dimensional array for extensibility. However, the 3x3 grid is a basic principle of Tic Tac Toe, so I used a 1-dimensional array for maximum simplicity and efficiency.</p>
         <div class="t3panel">
           <div class="t3buttons">

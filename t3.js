@@ -59,6 +59,7 @@ function newGame() {
   result.innerHTML = ""; 
   about.style.display = 'none';
   board.style.display = 'block';
+  aboutButton.value = aboutThisExercise;
 }
 
 /* determine if the game has ended and declare accordingly */
