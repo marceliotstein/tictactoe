@@ -17,6 +17,12 @@ var winningCombos = [[0,1,2],
                      [0,4,8],
                      [2,4,6]];
 
+/* about function */
+
+function about() {
+  alert("some stuff");
+}
+
 /* reset function */
 
 function newGame() {
@@ -29,8 +35,10 @@ function newGame() {
   numFilled = 0;
   activePlayer = "X";
   result = document.getElementById('result');
-  result.innerHTML = "";
+  result.innerHTML = ""; 
 }
+
+/* determine if the current grid has a winner and declare accordingly */
 
 function findWinner() {
   winner = null;
