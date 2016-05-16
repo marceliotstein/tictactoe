@@ -8,17 +8,8 @@
       <div class="t3panel">
         <div class="t3title">Tic Tac Toe</div>
         <div class="t3buttons">
-          <input id="reset" type="button" onclick="newGame()" value="New Game" />
-          <input id="about" type="button" onclick="toggleAbout()" value="About This Exercise" />
-        </div>
-        <div id="t3about">
-          <p>The code for this exercise is at <a target="_blank" href="https://github.com/marceliotstein/tictactoe">https://github.com/marceliotstein/tictactoe</a>.</p>
-          <p>The biggest challenge was to construct a layout for a tic tac toe grid and control panel that would make good use of available space on a wide variety of screen sizes. I used a combination of absolute and relative position, along with viewport-based sizing. The result may skew at abnormally wide or narrow screens, but should work correctly on most screens I had a chance to test.</p>
-          <p>I spent several hours on this, and focused most of my effort on selecting the right layout approach, rather than adding a lot of sophistication or modularity into the code. The javascript implementation is simple and straightforward, with variable names that should help to explain what is going on.</p>
-          <p>Another interesting decision I had to make was whether to implement the game board data structure with a multi-dimensional array. If there were any chance that this code would have to be adapted to a 4x4 or larger game board, I would have chosen a 2-dimensional array. With a fixed grid of 3x3 (which is a basic principle of Tic Tac Toe) it was more straightforward to use a 1-dimensional array of 9 elements to represent the 3x3 grid.</p>
-          <div class="t3buttons">
-            <input id="dismiss" type="button" onclick="toggleAbout()" value="Dismiss" />
-          </div>
+          <input id="resetButton" type="button" onclick="newGame()" value="New Game" />
+          <input id="aboutButton" type="button" onclick="toggleAbout()" value="About This Exercise" />
         </div>
         <div class="t3result">
           <div id="result">&nbsp; &nbsp;</div>
@@ -26,41 +17,52 @@
       </div>
     </div>
     <div id="game">
-      <table class="t3grid">
-        <tr class="t3row">
-           <td class="t3cell">
-             <div id="box1" class="t3box t3top t3left">&nbsp;</div>
-           </td>
-           <td class="t3cell">
-             <div id="box2" class="t3box t3top t3center">&nbsp;</div>
-           </td>
-           <td class="t3cell">
-             <div id="box3" class="t3box t3top t3right">&nbsp;</div>
-           </td>
-        </tr>
-        <tr class="t3row">
-           <td class="t3cell">
-             <div id="box4" class="t3box t3middle t3left ">&nbsp;</div>
-           </td>
-           <td class="t3cell">
-             <div id="box5" class="t3box t3middle t3center">&nbsp;</div>
-           </td>
-           <td class="t3cell">
-             <div id="box6" class="t3box t3middle t3right">&nbsp;</div>
-           </td>
-        </tr>
-        <tr class="t3row">
-           <td class="t3cell">
-             <div id="box7" class="t3box t3bottom t3left">&nbsp;</div>
-           </td>
-           <td class="t3cell">
-             <div id="box8" class="t3box t3bottom t3center">&nbsp;</div>
-           </td>
-           <td class="t3cell">
-             <div id="box9" class="t3box t3bottom t3right">&nbsp;</div>
-           </td>
-        </tr>
-      </table>
+      <div id="t3about">
+        <p>The code for this exercise is at <a target="_blank" href="https://github.com/marceliotstein/tictactoe">https://github.com/marceliotstein/tictactoe</a>.</p>
+        <p>The biggest challenge was to construct a layout for a tic tac toe grid and control panel that would make good use of available space on a wide variety of screen sizes. I used a combination of absolute and relative position, along with viewport-based sizing. The result may skew at abnormally wide or narrow screens, but should work correctly on most screens I had a chance to test.</p>
+        <p>I spent several hours on this, and focused most of my effort on selecting the right layout approach, rather than adding a lot of sophistication or modularity into the code. The javascript implementation is simple and straightforward, with variable names that should help to explain what is going on.</p>
+        <p>Another interesting decision I had to make was whether to implement the game board data structure with a multi-dimensional array. If there were any chance that this code would have to be adapted to a 4x4 or larger game board, I would have chosen a 2-dimensional array. With a fixed grid of 3x3 (which is a basic principle of Tic Tac Toe) it was more straightforward to use a 1-dimensional array of 9 elements to represent the 3x3 grid.</p>
+        <div class="t3buttons">
+          <input id="dismiss" type="button" onclick="toggleAbout()" value="Dismiss" />
+        </div>
+      </div>
+      <div id="t3board">
+        <table class="t3grid">
+          <tr class="t3row">
+             <td class="t3cell">
+               <div id="box1" class="t3box t3top t3left">&nbsp;</div>
+             </td>
+             <td class="t3cell">
+               <div id="box2" class="t3box t3top t3center">&nbsp;</div>
+             </td>
+             <td class="t3cell">
+               <div id="box3" class="t3box t3top t3right">&nbsp;</div>
+             </td>
+          </tr>
+          <tr class="t3row">
+             <td class="t3cell">
+               <div id="box4" class="t3box t3middle t3left ">&nbsp;</div>
+             </td>
+             <td class="t3cell">
+               <div id="box5" class="t3box t3middle t3center">&nbsp;</div>
+             </td>
+             <td class="t3cell">
+               <div id="box6" class="t3box t3middle t3right">&nbsp;</div>
+             </td>
+          </tr>
+          <tr class="t3row">
+             <td class="t3cell">
+               <div id="box7" class="t3box t3bottom t3left">&nbsp;</div>
+             </td>
+             <td class="t3cell">
+               <div id="box8" class="t3box t3bottom t3center">&nbsp;</div>
+             </td>
+             <td class="t3cell">
+               <div id="box9" class="t3box t3bottom t3right">&nbsp;</div>
+             </td>
+          </tr>
+        </table>
+      </div>
     </div>
     <script type="text/javascript" src="t3.js" ></script>
   </body>

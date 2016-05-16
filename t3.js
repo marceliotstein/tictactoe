@@ -2,12 +2,12 @@
  * t3.js
  */
 
-/* global variables */
+/* define game board */
 
-var activeGrid = [null,null,null,null,null,null,null,null,null];
-var activePlayer = "X";
-var numFilled = 0; 
-var winner = false;
+var playerOne = "X";
+var playerTwo = "O";
+var numBoxes = 9;
+var activeGrid = new Array();
 var winningCombos = [[0,1,2],
                      [3,4,5],
                      [6,7,8],
@@ -17,31 +17,53 @@ var winningCombos = [[0,1,2],
                      [0,4,8],
                      [2,4,6]];
 
-/* about function */
+/* text strings */
+
+var winnerMessage = " Wins!";
+var noWinnerMessage = "Nobody Wins.";
+var aboutThisExercise = "About This Exercise";
+var returnToGame = "Return To Game";
+
+/* element selectors */
+
+var about = document.getElementById('t3about');
+var board = document.getElementById('t3board');
+var result = document.getElementById('result');
+var aboutButton = document.getElementById('aboutButton');
+var boxes = document.getElementsByClassName('t3box');
+
+/* toggle "about" text which shares space with game board */
 
 function toggleAbout() {
-  about = document.getElementById('t3about');
-  about.style.display = (about.style.display == 'none') ? 'block' : 'none';
+  if (about.style.display == 'none') {
+    board.style.display = 'none';
+    about.style.display = 'block';
+    aboutButton.value = returnToGame;
+  } else {
+    board.style.display = 'block';
+    about.style.display = 'none';
+    aboutButton.value = aboutThisExercise;
+  }
 }
 
-/* reset function */
+/* initialize board for new game */
 
 function newGame() {
-  activeGrid = [null,null,null,null,null,null,null,null,null];
-  boxes = document.getElementsByClassName('t3box');
   for (i=0; i<boxes.length; i++) {
+    activeGrid[i] = null;
     boxes[i].innerHTML = "&nbsp;";
     boxes[i].className = boxes[i].className.replace(' t3winner','');
   }
   numFilled = 0;
-  activePlayer = "X";
-  result = document.getElementById('result');
+  activePlayer = playerOne;
   result.innerHTML = ""; 
+  about.style.display = 'none';
+  board.style.display = 'block';
 }
 
-/* determine if the current grid has a winner and declare accordingly */
+/* determine if the game has ended and declare accordingly */
 
-function findWinner() {
+function reviewMove() {
   winner = null;
   for (i=0; i<winningCombos.length; i++) {
     b0 = activeGrid[winningCombos[i][0]];
@@ -51,19 +73,23 @@ function findWinner() {
         winner = b0;
         b1 = activeGrid[winningCombos[i][1]];
         b2 = activeGrid[winningCombos[i][2]];
-        boxes = document.getElementsByClassName('t3box');
         boxes[winningCombos[i][0]].className += ' t3winner';
         boxes[winningCombos[i][1]].className += ' t3winner';
         boxes[winningCombos[i][2]].className += ' t3winner';
-        result = document.getElementById('result');
-        result.innerHTML = winner + " Wins!";
+        result.innerHTML = winner + winnerMessage;
       }
+    }
+  }
+  if (!winner) {
+    if (numFilled==numBoxes) {
+      result.innerHTML = noWinnerMessage;
     }
   }
   return winner;
 }
   
-boxes = document.getElementsByClassName('t3box');
+/* create event handler for each box in grid */
+
 for (i=0; i<boxes.length; i++) {
   boxes[i].onclick=function(){
     if (this.id=="box1") {
@@ -88,21 +114,17 @@ for (i=0; i<boxes.length; i++) {
     if (activeGrid[b]==null) {
       activeGrid[b] = activePlayer; 
       this.innerHTML = activePlayer;
-      if (activePlayer=="X") {
-        activePlayer = "O";
-      } else if (activePlayer=="O") {
-        activePlayer = "X";
+      if (activePlayer==playerOne) {
+        activePlayer = playerTwo;
+      } else if (activePlayer==playerTwo) {
+        activePlayer = playerOne;
       }
       numFilled++;
-      winner = findWinner();
-      if (winner==null) {
-        if (numFilled==9) {
-          alert("This game is finished");
-        }
-      }
-    } else {
-      alert("This space is occupied");
+      reviewMove();
     }
   }
 }
 
+/* begin initial game */
+
+newGame();

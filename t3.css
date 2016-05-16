@@ -2,8 +2,58 @@
  * t3.css
  */
 
+/* global styles */
+
 body {
   font-family: helvetica, sans-serif;
+}
+
+input {
+  background-color: yellow;
+  border: 0;
+  font-style: bold;
+  font-size: 1.2em;
+  width: 200px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+div {
+  border-style: solid;
+  border-width: 0px;
+  border-color: black;
+}
+
+/* main page layout and grid with media queries */
+
+td {
+  width:33.33%;
+  position:relative;
+  valign: middle;
+}
+
+td:after{
+  content:'';
+  display:block;
+  margin-top:100%;
+}
+
+#t3about {
+  text-align: left;
+  display: none;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#t3board {
+  display: block;
+}
+
+.t3grid {
+  padding: 10px;
+  border-spacing: 0px;
+  border-width: 0px;
+  margin: 0 auto;
 }
 
 td .t3box {
@@ -17,54 +67,21 @@ td .t3box {
   text-align: center;
 }
 
-.t3grid {
-  padding: 10px;
-  border-spacing: 0px;
-  border-width: 0px;
-  margin: 0 auto;
+td {
+  width:33.33%;
+  position:relative;
+  valign: middle;
 }
 
-.t3panel {
-  margin: 0 auto;
-  text-align: center;
-}
-
-input {
-  background-color: orange;
-  border: 0;
-  font-style: bold;
-  font-size: 1.2em;
-}
-
-.t3title {
-  padding: 5px;
-  font-size: 4em;
-}
-
-.t3buttons {
-  padding: 5px;
-}
-
-#t3about {
-  text-align: left;
-  display: none;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.t3result {
-  padding: 5px;
-  font-size: 3em;
-  color: orange;
-}
-
-.t3winner {
-  background-color: orange;
+td:after{
+  content:'';
+  display:block;
+  margin-top:100%;
 }
 
 @media (orientation: portrait) {
   td .t3box {
-    font-size: 28vw;
+    font-size: 30vw;
     vertical-align: middle;
   }
   .t3grid {
@@ -81,7 +98,7 @@ input {
 
 @media (orientation: landscape) {
   td .t3box {
-    font-size: 13vw;
+    font-size: 14vw;
     vertical-align: middle;
   }
   .t3grid {
@@ -97,6 +114,34 @@ input {
     float: right;
   }
 }
+
+/* control panel styles */
+
+.t3panel {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.t3title {
+  padding: 5px;
+  font-size: 5em;
+}
+
+.t3buttons {
+  padding: 5px;
+}
+
+.t3result {
+  padding: 5px;
+  font-size: 3em;
+  color: orange;
+}
+
+.t3winner {
+  background-color: orange;
+}
+
+/* game board styles */
 
 .t3row { 
   width: 33.33%;
@@ -137,23 +182,5 @@ input {
 .t3bottom {
   border-top-width: 3px;
   border-bottom-width: 0px;
-}
-
-div {
-  border-style: solid;
-  border-width: 0px;
-  border-color: black;
-}
-
-td {
-  width:33.33%;
-  position:relative;
-  valign: middle;
-}
-
-td:after{
-  content:'';
-  display:block;
-  margin-top:100%;
 }
 
