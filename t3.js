@@ -19,8 +19,9 @@ var winningCombos = [[0,1,2],
 
 /* about function */
 
-function about() {
-  alert("some stuff");
+function toggleAbout() {
+  about = document.getElementById('t3about');
+  about.style.display = (about.style.display == 'none') ? 'block' : 'none';
 }
 
 /* reset function */

@@ -29,18 +29,27 @@ td .t3box {
   text-align: center;
 }
 
-button {
+input {
   background-color: orange;
   border: 0;
+  font-style: bold;
+  font-size: 1.2em;
 }
 
 .t3title {
   padding: 5px;
-  font-size: 3em;
+  font-size: 4em;
 }
 
 .t3buttons {
   padding: 5px;
+}
+
+#t3about {
+  text-align: left;
+  display: none;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .t3result {
